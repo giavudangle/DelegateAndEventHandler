@@ -8,8 +8,8 @@ namespace DelegateAndEventHandler
 {
     class MyApplication
     {
-        private Button openButton;
-        private Button saveButton;
+        public Button openButton;
+        public Button saveButton;
         private string fileName;
 
         public MyApplication()
@@ -21,10 +21,23 @@ namespace DelegateAndEventHandler
             this.saveButton.OnButtonClick += this.SaveButtonClicked;
         }
 
-        private void OpenButtonClicked(Button source,int x,int y)
+        private void OpenButtonClicked(Button source, int x, int y)
         {
-            Console.WriteLine("Open Dialog to Select A File")
+            Console.WriteLine("Open Dialog to Select A File");
+            this.fileName = "File" + x + "_" + y + ".txt";
+            Console.WriteLine("Openning File: " + this.fileName);
+        }
+
+        private void SaveButtonClicked(Button source, int x, int y)
+        {
+            if (this.fileName == null)
+            {
+                Console.WriteLine("No file saved");
+                return;
+            }
+            Console.WriteLine("Saved file: " + this.fileName);
         }
 
     }
+
 }

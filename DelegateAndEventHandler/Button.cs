@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DelegateAndEventHandler
 {
-    class Button
+    public class Button
     {
         private string label;
 
